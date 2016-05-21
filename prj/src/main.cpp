@@ -14,7 +14,7 @@ using namespace std;
 
 int main()
 {
-  Thief test;
-  test.target_spot(20);
-
+  Thief test(5);
+  test.target_spot(4);
+  test.DP_approach();
 }
