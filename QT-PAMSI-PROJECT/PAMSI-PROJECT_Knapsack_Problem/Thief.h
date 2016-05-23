@@ -11,9 +11,15 @@ class Thief
   public:
     Thief(int cap); //konstruktor - inicjujemy pojemnosc plecaka zlodzieja
     void target_spot(int n); //metoda spot - wypelnia sklep n towarami
-    int get_stolen_items_weight(int i);
-    int get_stolen_items_value(int i);
+    int get_target_weight(int i);
+    int get_target_value(int i);
     int get_target_size();
+    void set_stolen_items(int index, int value);
+    int get_stolen_items(int i);
+    int get_we();
+    void set_we(int value);
+    int get_worth_stealing(int i);
+    int get_knapsack_capacity(){return knapsack_capacity;}
 
     //Miejsce na implementacje algorytmow rozwiazujacych problem plecakowy
 

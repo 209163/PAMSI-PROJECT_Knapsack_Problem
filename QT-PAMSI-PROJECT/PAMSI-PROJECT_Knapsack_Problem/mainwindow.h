@@ -14,6 +14,11 @@ class MainWindow : public QMainWindow
 public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
+    int get_value(int i);
+    int get_weight(int i);
+
+public slots:
+
 
 private slots:
     void on_pushButton_clicked();

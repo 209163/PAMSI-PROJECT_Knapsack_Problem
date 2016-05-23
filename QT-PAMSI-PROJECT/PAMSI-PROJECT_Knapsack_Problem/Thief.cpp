@@ -12,6 +12,7 @@ using namespace std;
 #include "Goods.h"
 #include "Store.h"
 #include "Thief.h"
+#include "mainwindow.h"
 
 #define RANGE 100 //zakres do losowania wartosci/wag
 
@@ -22,12 +23,12 @@ Thief::Thief(int cap)
   this->knapsack_capacity=cap;
 }
 
-int Thief::get_stolen_items_weight(int i)
+int Thief::get_target_weight(int i)
 {
      return target[i].get_weight();
 }
 
-int Thief::get_stolen_items_value(int i)
+int Thief::get_target_value(int i)
 {
       return target[i].get_value();
 }
@@ -35,6 +36,31 @@ int Thief::get_stolen_items_value(int i)
 int Thief::get_target_size()
 {
       return target.get_size();
+}
+
+void Thief::set_stolen_items(int index, int value)
+{
+    stolen_items[index]=value;
+}
+
+int Thief::get_stolen_items(int i)
+{
+    return stolen_items[i];
+}
+
+int Thief::get_we()
+{
+    return we;
+}
+
+void Thief::set_we(int value)
+{
+    we=value;
+}
+
+int Thief::get_worth_stealing(int i)
+{
+    return target[i].worth_stealing();
 }
 
 void Thief:: target_spot(int n)
@@ -62,17 +88,35 @@ void Thief:: target_spot(int n)
 
 //Wagi -> 3,2,4,1
 //Zysk -> 100,20,60,40
+ //Goods(waga, wartosc)
 
   target[0]=Goods(3,100);
-  target[1]=Goods(2,20);
-  target[2]=Goods(4,60);
-  target[3]=Goods(1,40);
+  target[1]=Goods(5,20);
+  target[2]=Goods(5,60);
+  target[3]=Goods(5,40);
+  target[4]=Goods(5,100);
+  target[5]=Goods(6,20);
+  target[6]=Goods(4,60);
+  target[7]=Goods(5,40);
+  target[8]=Goods(3,100);
+  target[9]=Goods(8,20);
+
+//3. Sposob - pobranie wartosci z aplikacji
+//    MainWindow w;
+//    //wartosci value i weight przekazane z aplikacji:
+//    for (int i=0;i<10;i++)
+//    {
+//        target[i]=Goods(w.get_weight(i), w.get_value(i));
+//        //cout<<"Co przekazuje apka: "<<target[i].get_weight()<<" "<<target.get_size()<<endl;
+//    }
+
+
 
   cout << "W sklepie znajduja sie nastepujace przedmioty: "<< endl;
   for(int i=0; i < target.get_size() ;i++)
     {
       cout << "Przedmiot " << i << ": waga: ";
-      cout << target[i].get_weight() <<" wartsc: ";
+      cout << target[i].get_weight() <<" wartosc: ";
       cout <<target[i].get_value() << endl;
     }
 }
