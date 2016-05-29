@@ -1,5 +1,6 @@
 #ifndef STORE_H
 #define STORE_H
+#include "Goods.h"
 
 class Store
 {

@@ -22,7 +22,10 @@ int main(int argc, char *argv[])
     MainWindow w;
     w.show();
 
-
+    for (int i=0; i<10 ; i++)
+    {
+        cout<<"values:"<<w.values[i]<<" "<<"weights:"<<w.weights[i]<<endl;
+    }
 
 
     return a.exec();

@@ -67,22 +67,22 @@ void Thief:: target_spot(int n)
 {
   this->target=Store(n);
 
-  /*
+
   cerr <<"Rozmiar listy: "<<  target.get_size() << endl;
   //1. Sposob - losowanie
   random_device rd;
   mt19937 rng(rd());
   uniform_int_distribution<int> uni(0,RANGE);
 
-  for(int i =0; i<size;i++)
+  for(int i =0; i<target.get_size();i++)
     {
       int a=uni(rng);
-      cout << "Przedmiot" << i+1 <<endl;
+      //cout << "Przedmiot" << i+1 <<endl;
       target[i]=Goods(a,10*a);
-      cout << target[i].get_value() << "  ";
-      cout << target[i].get_weight() << endl;;
+      //cout << target[i].get_value() << "  ";
+      //cout << target[i].get_weight() << endl;;
     }
-  */
+
 
 //2. Sposob - reczna inicjalizacja listy towarow w sklepi
 
@@ -90,23 +90,28 @@ void Thief:: target_spot(int n)
 //Zysk -> 100,20,60,40
  //Goods(waga, wartosc)
 
-  target[0]=Goods(3,100);
-  target[1]=Goods(5,20);
-  target[2]=Goods(5,60);
-  target[3]=Goods(5,40);
-  target[4]=Goods(5,100);
-  target[5]=Goods(6,20);
-  target[6]=Goods(4,60);
-  target[7]=Goods(5,40);
-  target[8]=Goods(3,100);
-  target[9]=Goods(8,20);
+//  target[0]=Goods(3,100);
+//  target[1]=Goods(5,20);
+//  target[2]=Goods(5,60);
+//  target[3]=Goods(5,40);
+//  target[4]=Goods(5,100);
+//  target[5]=Goods(6,20);
+//  target[6]=Goods(4,60);
+//  target[7]=Goods(5,40);
+//  target[8]=Goods(3,100);
+//  target[9]=Goods(8,20);
 
 //3. Sposob - pobranie wartosci z aplikacji
-//    MainWindow w;
-//    //wartosci value i weight przekazane z aplikacji:
+
+    //wartosci value i weight przekazane z aplikacji:
+
+
+//    set_weight();
+//    set_value();
 //    for (int i=0;i<10;i++)
 //    {
-//        target[i]=Goods(w.get_weight(i), w.get_value(i));
+//        cout<<weights[i]<<" "<<values[i]<<endl;
+//        target[i]=Goods(weights[i], values[i]);
 //        //cout<<"Co przekazuje apka: "<<target[i].get_weight()<<" "<<target.get_size()<<endl;
 //    }
 

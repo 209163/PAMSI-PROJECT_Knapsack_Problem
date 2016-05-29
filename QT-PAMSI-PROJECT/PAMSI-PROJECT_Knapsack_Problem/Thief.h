@@ -1,6 +1,7 @@
 #ifndef THIEF_H
 #define THIEF_H
 
+
 class Thief
 {
     Store target;

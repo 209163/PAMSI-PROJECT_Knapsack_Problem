@@ -1,5 +1,7 @@
 #ifndef GOODS_H
 #define GOODS_H
+#include <string>
+using namespace std;
 
 class Goods
 {
